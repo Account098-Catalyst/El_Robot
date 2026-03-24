@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { PartyPopper, Coffee, UtensilsCrossed, Dumbbell, Wine, AlertTriangle, Timer } from "lucide-react";
+import { PartyPopper, Coffee, UtensilsCrossed, Dumbbell, Wine } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 import MissionCard from "@/components/MissionCard";
 import ProgressTracker from "@/components/ProgressTracker";
 
