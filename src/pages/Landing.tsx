@@ -4,55 +4,54 @@ import agentImage from "@/assets/Bond-like focus and precision.png";
 
 const Landing = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground overflow-hidden">
-      <div className="relative min-h-screen flex items-center justify-center px-4 py-10">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,hsl(43_80%_55%_/_0.22),transparent_36%),radial-gradient(circle_at_85%_24%,hsl(0_70%_50%_/_0.22),transparent_34%),linear-gradient(180deg,hsl(220_20%_7%)_0%,hsl(220_18%_10%)_58%,hsl(220_20%_7%)_100%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(110deg,hsl(0_0%_100%_/_0.02)_0%,transparent_32%,transparent_70%,hsl(0_0%_100%_/_0.02)_100%)]" />
+    <main className="bg-background text-foreground">
+      <section className="relative h-screen min-h-[620px] overflow-hidden">
+        <img
+          src={agentImage}
+          alt="Agent portrait"
+          className="absolute inset-0 h-full w-full object-cover object-[center_24%] sm:object-center"
+        />
 
-        <motion.section
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="relative z-10 w-full max-w-5xl rounded-xl border border-primary/20 bg-card/60 backdrop-blur-md shadow-[0_18px_60px_hsl(0_0%_0%_/_0.5)]"
-        >
-          <div className="grid md:grid-cols-[1.1fr_1fr] gap-0">
-            <div className="p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center">
-              <div className="inline-flex items-center w-fit gap-2 px-3 py-1 rounded-sm border border-accent/40 bg-accent/10 text-accent text-[10px] tracking-[0.2em] uppercase font-semibold mb-5">
-                Secure Channel Open
-              </div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(220_20%_7%_/_0.72)_0%,hsl(220_20%_7%_/_0.2)_38%,hsl(220_20%_7%_/_0.78)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,hsl(43_80%_58%_/_0.22),transparent_36%)]" />
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{
+            backgroundImage:
+              "repeating-linear-gradient(0deg, transparent, transparent 3px, hsl(0 0% 100% / 0.25) 3px, hsl(0 0% 100% / 0.25) 4px)",
+          }}
+        />
 
-              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-gold-gradient">
+        <div className="hero-text-container relative z-10 h-full mx-auto max-w-6xl px-4 sm:px-6">
+          <div className="flex h-full flex-col">
+            <div className="branding flex-1 flex items-start justify-center pt-12 sm:pt-14 md:pt-16">
+              <motion.h1
+                initial={{ opacity: 0, y: -16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-center font-display text-3xl sm:text-4xl md:text-5xl font-black leading-tight text-gold-gradient [text-shadow:0_6px_28px_hsl(0_0%_0%_/_0.72)]"
+              >
                 Agent Wellens, Welcome
-              </h1>
+              </motion.h1>
+            </div>
 
-              <p className="mt-5 text-sm sm:text-base text-foreground/75 leading-relaxed max-w-xl">
-                Your mission briefing is ready. Proceed to enter the operational interface and begin the rescue sequence.
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div className="hero-bottom flex justify-center pb-10 sm:pb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.12 }}
+              >
                 <Link
                   to="/briefing"
-                  className="inline-flex items-center justify-center px-6 py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-3 rounded-sm bg-primary text-primary-foreground font-semibold text-sm uppercase tracking-[0.18em] hover:bg-primary/90 transition-colors shadow-[0_8px_24px_hsl(0_0%_0%_/_0.45)]"
                 >
-                  I accept my mission
+                  I accept
                 </Link>
-                <span className="text-xs uppercase tracking-[0.18em] text-foreground/45">
-                  Clearance Level: Omega
-                </span>
-              </div>
-            </div>
-
-            <div className="relative min-h-[280px] md:min-h-full">
-              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-card/85 md:to-transparent" />
-              <img
-                src={agentImage}
-                alt="Agent portrait"
-                className="h-full w-full object-cover object-center"
-              />
+              </motion.div>
             </div>
           </div>
-        </motion.section>
-      </div>
+        </div>
+      </section>
     </main>
   );
 };
