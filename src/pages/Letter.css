@@ -1,30 +1,38 @@
-.letter-shell {
+.letter-page-shell {
+  background: hsl(220 20% 7%);
+  color: hsl(40 20% 90%);
+}
+
+.letter-hero {
   position: relative;
   min-height: 100vh;
   min-height: 100dvh;
-  background: hsl(220 20% 7%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0.75rem;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
+.letter-overlay-main,
 .letter-overlay-glow,
 .letter-overlay-scan {
-  position: fixed;
+  position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 0;
+}
+
+.letter-overlay-main {
+  background: linear-gradient(
+    180deg,
+    hsl(220 20% 7% / 0.68) 0%,
+    hsl(220 20% 7% / 0.22) 34%,
+    hsl(220 20% 7% / 0.84) 100%
+  );
 }
 
 .letter-overlay-glow {
-  background: radial-gradient(circle at 50% 22%, hsl(43 80% 58% / 0.18), transparent 60%);
+  background: radial-gradient(circle at 50% 22%, hsl(43 80% 58% / 0.2), transparent 36%);
 }
 
 .letter-overlay-scan {
-  opacity: 0.07;
+  opacity: 0.04;
   background-image: repeating-linear-gradient(
     0deg,
     transparent,
@@ -36,9 +44,27 @@
 
 .letter-frame {
   pointer-events: none;
-  position: fixed;
+  position: absolute;
   inset: 12px;
-  z-index: 1;
+  z-index: 0;
+}
+
+.letter-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 1.5rem 0.75rem;
+}
+
+.letter-content-inner {
+  min-height: calc(100vh - 3rem);
+  min-height: calc(100dvh - 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .letter-corner {
@@ -79,7 +105,7 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  max-width: 32rem;
+  max-width: 36rem;
   height: auto;
   object-fit: contain;
   border-radius: 2px;
@@ -87,10 +113,6 @@
 }
 
 @media (min-width: 640px) {
-  .letter-shell {
-    padding: 2rem 1.5rem;
-  }
-
   .letter-frame {
     inset: 20px;
   }
@@ -100,8 +122,17 @@
     height: 48px;
   }
 
+  .letter-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .letter-content-inner {
+    min-height: calc(100vh - 4rem);
+    min-height: calc(100dvh - 4rem);
+  }
+
   .letter-image {
-    max-width: 38rem;
+    max-width: 42rem;
   }
 }
 
