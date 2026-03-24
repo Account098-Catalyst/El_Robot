@@ -50,7 +50,7 @@ const Landing = () => {
                 transition={{ duration: 0.6, delay: 0.12 }}
                 className="landing-cta-wrap"
               >
-                <Link to="/briefing" className="landing-cta">
+                <Link to="/letter" className="landing-cta">
                   I accept
                 </Link>
               </motion.div>

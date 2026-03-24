@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Briefing from "./pages/Briefing.tsx";
 import Landing from "./pages/Landing.tsx";
+import Letter from "./pages/Letter.tsx";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
@@ -18,6 +19,7 @@ const App = () => (
       <HashRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/letter" element={<Letter />} />
           <Route path="/briefing" element={<Briefing />} />
           <Route path="/mission" element={<Index />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
